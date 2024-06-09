@@ -1,7 +1,7 @@
 apiVersion: gateway.networking.k8s.io/v1beta1
 kind: Gateway
 metadata:
-  name: tcp-echo-gateway
+  name: tcp-echo-egateway
 spec:
   gatewayClassName: eg
   listeners:
@@ -15,10 +15,10 @@ spec:
 apiVersion: gateway.networking.k8s.io/v1alpha2
 kind: TCPRoute
 metadata:
-  name: tcp-echo
+  name: tcp-echoe
 spec:
   parentRefs:
-  - name: tcp-echo-gateway
+  - name: tcp-echo-egateway
     sectionName: tcp-31400
   rules:
   - backendRefs:
