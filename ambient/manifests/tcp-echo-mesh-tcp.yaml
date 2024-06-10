@@ -11,4 +11,4 @@ spec:
   rules:
   - backendRefs:
     - name: tcp-echo-v2
-      port: 9000
+      port: 31400
