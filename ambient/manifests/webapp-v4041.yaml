@@ -81,10 +81,38 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: webservice
+  name: webapp
 spec:
   selector:
     app: webapp
+  ports:
+  - name: http-webservice
+    protocol: TCP
+    port: 80
+    targetPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-v40
+spec:
+  selector:
+    app: webapp
+    version: v4.0
+  ports:
+  - name: http-webservice
+    protocol: TCP
+    port: 80
+    targetPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-v41
+spec:
+  selector:
+    app: webapp
+    version: v4.1
   ports:
   - name: http-webservice
     protocol: TCP
