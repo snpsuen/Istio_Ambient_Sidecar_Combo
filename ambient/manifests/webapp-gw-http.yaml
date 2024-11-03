@@ -18,15 +18,12 @@ metadata:
   name: webapp-gw-http
 spec:
   parentRefs:
-  - group: ""
-    kind: Service
-    name: reviews
-    port: 9080
+  - name: webapp-gateway
   rules:
   - backendRefs:
-    - name: reviews-v1
-      port: 9080
-      weight: 90
-    - name: reviews-v2
-      port: 9080
-      weight: 10
+    - name: webapp-v40
+      port: 80
+      weight: 100
+    - name: webapp-v41
+      port: 80
+      weight: 0
